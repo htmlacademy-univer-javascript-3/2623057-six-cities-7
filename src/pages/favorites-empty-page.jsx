@@ -1,6 +1,5 @@
 const FavoritesEmptyPage = () => (
     <body>
-    
     <div class="page page--favorites-empty">
       <header class="header">
         <div class="container">
@@ -30,7 +29,6 @@ const FavoritesEmptyPage = () => (
           </div>
         </div>
       </header>
-
       <main class="page__main page__main--favorites page__main--favorites-empty">
         <div class="page__favorites-container container">
           <section class="favorites favorites--empty">

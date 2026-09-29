@@ -29,7 +29,6 @@ const MainEmptyPage = () => (
           </div>
         </div>
       </header>
-
       <main class="page__main page__main--index page__main--index-empty">
         <h1 class="visually-hidden">Cities</h1>
         <div class="tabs">

@@ -1,6 +1,5 @@
-const OfferPage = () => (
+const OfferNotLoggedPage = () => (
     <body>
-
     <div class="page">
       <header class="header">
         <div class="container">
@@ -16,13 +15,7 @@ const OfferPage = () => (
                   <a class="header__nav-link header__nav-link--profile" href="#">
                     <div class="header__avatar-wrapper user__avatar-wrapper">
                     </div>
-                    <span class="header__user-name user__name">Oliver.conner@gmail.com</span>
-                    <span class="header__favorite-count">3</span>
-                  </a>
-                </li>
-                <li class="header__nav-item">
-                  <a class="header__nav-link" href="#">
-                    <span class="header__signout">Sign out</span>
+                    <span class="header__login">Sign in</span>
                   </a>
                 </li>
               </ul>
@@ -30,7 +23,6 @@ const OfferPage = () => (
           </div>
         </div>
       </header>
-
       <main class="page__main page__main--offer">
         <section class="offer">
           <div class="offer__gallery-container container">
@@ -176,52 +168,6 @@ const OfferPage = () => (
                     </div>
                   </li>
                 </ul>
-                <form class="reviews__form form" action="#" method="post">
-                  <label class="reviews__label form__label" for="review">Your review</label>
-                  <div class="reviews__rating-form form__rating">
-                    <input class="form__rating-input visually-hidden" name="rating" value="5" id="5-stars" type="radio" />
-                    <label for="5-stars" class="reviews__rating-label form__rating-label" title="perfect">
-                      <svg class="form__star-image" width="37" height="33">
-                        <use xlink:href="#icon-star"></use>
-                      </svg>
-                    </label>
-
-                    <input class="form__rating-input visually-hidden" name="rating" value="4" id="4-stars" type="radio" />
-                    <label for="4-stars" class="reviews__rating-label form__rating-label" title="good">
-                      <svg class="form__star-image" width="37" height="33">
-                        <use xlink:href="#icon-star"></use>
-                      </svg>
-                    </label>
-
-                    <input class="form__rating-input visually-hidden" name="rating" value="3" id="3-stars" type="radio" />
-                    <label for="3-stars" class="reviews__rating-label form__rating-label" title="not bad">
-                      <svg class="form__star-image" width="37" height="33">
-                        <use xlink:href="#icon-star"></use>
-                      </svg>
-                    </label>
-
-                    <input class="form__rating-input visually-hidden" name="rating" value="2" id="2-stars" type="radio" />
-                    <label for="2-stars" class="reviews__rating-label form__rating-label" title="badly">
-                      <svg class="form__star-image" width="37" height="33">
-                        <use xlink:href="#icon-star"></use>
-                      </svg>
-                    </label>
-
-                    <input class="form__rating-input visually-hidden" name="rating" value="1" id="1-star" type="radio" />
-                    <label for="1-star" class="reviews__rating-label form__rating-label" title="terribly">
-                      <svg class="form__star-image" width="37" height="33">
-                        <use xlink:href="#icon-star"></use>
-                      </svg>
-                    </label>
-                  </div>
-                  <textarea class="reviews__textarea form__textarea" id="review" name="review" placeholder="Tell how was your stay, what you like and what can be improved"></textarea>
-                  <div class="reviews__button-wrapper">
-                    <p class="reviews__help">
-                      To submit review please make sure to set <span class="reviews__star">rating</span> and describe your stay with at least <b class="reviews__text-amount">50 characters</b>.
-                    </p>
-                    <button class="reviews__submit form__submit button" type="submit" disabled="">Submit</button>
-                  </div>
-                </form>
               </section>
             </div>
           </div>
@@ -262,7 +208,6 @@ const OfferPage = () => (
                   <p class="place-card__type">Room</p>
                 </div>
               </article>
-
               <article class="near-places__card place-card">
                 <div class="near-places__image-wrapper place-card__image-wrapper">
                   <a href="#">
@@ -294,7 +239,6 @@ const OfferPage = () => (
                   <p class="place-card__type">Apartment</p>
                 </div>
               </article>
-
               <article class="near-places__card place-card">
                 <div class="place-card__mark">
                   <span>Premium</span>
@@ -337,4 +281,4 @@ const OfferPage = () => (
   </body>
 )
 
-export default OfferPage
+export default OfferNotLoggedPage

@@ -1,4 +1,4 @@
-import MainPage from './pages/MainPage';
+import MainPage from './pages/main-page';
 
 const App = () => (
   <MainPage offersCount={312}/>

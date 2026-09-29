@@ -1,6 +1,5 @@
 const LoginPage = () => (
     <body>
-
     <div class="page page--gray page--login">
       <header class="header">
         <div class="container">
@@ -13,7 +12,6 @@ const LoginPage = () => (
           </div>
         </div>
       </header>
-
       <main class="page__main page__main--login">
         <div class="page__login-container container">
           <section class="login">

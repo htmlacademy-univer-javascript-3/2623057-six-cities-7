@@ -1,6 +1,5 @@
 const FavoritesPage = () => (
     <body>
-
     <div class="page">
       <header class="header">
         <div class="container">
@@ -30,7 +29,6 @@ const FavoritesPage = () => (
           </div>
         </div>
       </header>
-
       <main class="page__main page__main--favorites">
         <div class="page__favorites-container container">
           <section class="favorites">
@@ -79,7 +77,6 @@ const FavoritesPage = () => (
                       <p class="place-card__type">Apartment</p>
                     </div>
                   </article>
-
                   <article class="favorites__card place-card">
                     <div class="favorites__image-wrapper place-card__image-wrapper">
                       <a href="#">
@@ -113,7 +110,6 @@ const FavoritesPage = () => (
                   </article>
                 </div>
               </li>
-
               <li class="favorites__locations-items">
                 <div class="favorites__locations locations locations--current">
                   <div class="locations__item">
