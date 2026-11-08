@@ -1,50 +1,54 @@
 import { useEffect, useRef } from 'react';
-import * as leaf from 'leaflet';
+import * as leaflet from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import type { Offer } from '../../mocks/offers';
+import { URL_MARKER_CURRENT, URL_MARKER_DEFAULT } from './const';
+import useMap from './use-map';
 
 type MapProps = {
   city: Offer['city'];
   offers: Offer[];
+  activeOfferId: string | null;
 };
 
-const pinIcon = leaf.icon({
-  iconUrl: '/img/pin.svg',
+const defaultCustomIcon = leaflet.icon({
+  iconUrl: URL_MARKER_DEFAULT,
   iconSize: [27, 39],
   iconAnchor: [13, 39],
 });
 
-function Map({ city, offers }: MapProps): JSX.Element {
-  const mapRef = useRef<HTMLElement | null>(null);
+const currentCustomIcon = leaflet.icon({
+  iconUrl: URL_MARKER_CURRENT,
+  iconSize: [27, 39],
+  iconAnchor: [13, 39],
+});
+
+function Map({ city, offers, activeOfferId }: MapProps): JSX.Element {
+  const mapRef = useRef<HTMLElement>(null);
+  const map = useMap(mapRef, city);
 
   useEffect(() => {
-    if (mapRef.current === null) {
+    if (map === null) {
       return;
     }
 
-    const map = leaf.map(mapRef.current).setView(
-      [city.location.latitude, city.location.longitude],
-      city.location.zoom
-    );
-
-    leaf.tileLayer(
-      'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-      {
-        attribution: '&copy; OpenStreetMap contributors',
-      }
-    ).addTo(map);
+    const markersLayer = leaflet.layerGroup().addTo(map);
 
     offers.forEach((offer) => {
-      leaf.marker(
+      leaflet.marker(
         [offer.location.latitude, offer.location.longitude],
-        { icon: pinIcon }
-      ).addTo(map);
+        {
+          icon: offer.id === activeOfferId
+            ? currentCustomIcon
+            : defaultCustomIcon,
+        }
+      ).addTo(markersLayer);
     });
 
     return () => {
-      map.remove();
+      markersLayer.remove();
     };
-  }, [city, offers]);
+  }, [activeOfferId, map, offers]);
 
   return <section className="cities__map map" ref={mapRef} />;
 }

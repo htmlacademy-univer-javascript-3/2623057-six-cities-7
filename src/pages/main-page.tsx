@@ -1,7 +1,7 @@
 import OffersList from '../components/OffersList/OffersList';
 import type { Offer } from '../mocks/offers';
 import { useState } from 'react';
-import Map from '../components/map/map'
+import Map from '../components/map/map';
 
 type MainPageProps = {
     offers: Offer[];
@@ -106,7 +106,11 @@ const MainPage = ({ offers }: MainPageProps) => {
               </section>
               <div className="cities__right-section">
                 {offers.length > 0 && (
-                  <Map city={offers[0].city} offers={offers} />
+                  <Map
+                    city={offers[0].city}
+                    offers={offers}
+                    activeOfferId={activeOfferId}
+                  />
                 )}
               </div>
             </div>
